@@ -887,8 +887,9 @@ body {
 }
 
 .ad-carousel-container {
-    width: ; max-width: 1200px;
+    width: 100%;
     margin: 20px 0;
+    overflow: hidden; /* Ensure the carousel doesn't affect surrounding elements */
 }
 
 .ad-container {
@@ -899,8 +900,19 @@ body {
     background-color: #f0f0f0;
     border: 1px solid #ddd;
     font-size: 24px;
+    user-select: none; /* Prevent text selection during swiping */
 }
-    </style>
+
+.ad-swiper {
+    width: 100%;
+    height: 100%;
+}
+
+.swiper-slide {
+    width: 100%;
+    height: 100%;
+}
+</style>
 </head>
 <body>
     <main class="container">
@@ -2949,28 +2961,39 @@ function createSocialLinks(data) {
                         <div class="swiper-slide"><div class="ad-container">Ad 4</div></div>
                         <div class="swiper-slide"><div class="ad-container">Ad 5</div></div>
                     </div>
+                    <div class="swiper-pagination"></div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
                 </div>
             </div>
         `;
     }
 
     function initializeAdCarousel() {
-        new Swiper('.ad-swiper', {
-            slidesPerView: 1,
-            spaceBetween: 30,
-            loop: true,
-            pagination: {
-                el: '.swiper-pagination',
-                clickable: true,
-            },
-            navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
-            },
-            autoplay: {
-                delay: 5000,
-                disableOnInteraction: false,
-            },
+        const adSwipers = document.querySelectorAll('.ad-swiper');
+        adSwipers.forEach((swiperElement, index) => {
+            new Swiper(swiperElement, {
+                slidesPerView: 1,
+                spaceBetween: 30,
+                loop: true,
+                pagination: {
+                    el: swiperElement.querySelector('.swiper-pagination'),
+                    clickable: true,
+                },
+                navigation: {
+                    nextEl: swiperElement.querySelector('.swiper-button-next'),
+                    prevEl: swiperElement.querySelector('.swiper-button-prev'),
+                },
+                autoplay: {
+                    delay: 5000,
+                    disableOnInteraction: false,
+                },
+                touchEventsTarget: 'container',
+                preventClicks: false,
+                preventClicksPropagation: false,
+                simulateTouch: true,
+                touchStartPreventDefault: false,
+            });
         });
     }
 
@@ -3020,7 +3043,6 @@ function createSocialLinks(data) {
             // Add ad carousel after every 5 cards
             if ((index + 1) % AD_INTERVAL === 0 && index < cardsToRender.length - 1) {
                 cardsContainer.insertAdjacentHTML('beforeend', createAdCarousel());
-                initializeAdCarousel();
             }
 
             // Initialize Swiper for detail boxes
@@ -3223,4 +3245,3 @@ function createSocialLinks(data) {
 </script>
     <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
 </body>
-</html>
