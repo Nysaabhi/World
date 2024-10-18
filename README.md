@@ -906,6 +906,10 @@ body {
     font-size: 24px;
 }
 
+.ad-container img {
+    border-radius: 10px;
+}
+
 /* Responsive adjustments */
 @media (max-width: 768px) {
     .ad-carousel-container {
