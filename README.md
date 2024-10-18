@@ -2976,17 +2976,17 @@ function createSocialLinks(data) {
 </div>
 <div class="swiper-slide">
     <div class="ad-container">
-        <img src="/api/placeholder/800/300" alt="Ad 3 Banner">
+        <img src="https://i.postimg.cc/C5L74DfM/AD.png" alt="Ad 3 Banner">
     </div>
 </div>
 <div class="swiper-slide">
     <div class="ad-container">
-        <img src="/api/placeholder/800/300" alt="Ad 4 Banner">
+        <img src="https://i.postimg.cc/6q3gYT7K/Black-and-White-Typographic-and-Modern-Phone-Brand-Facebook-Ad.png" alt="Ad 4 Banner">
     </div>
 </div>
 <div class="swiper-slide">
     <div class="ad-container">
-        <img src="/api/placeholder/800/300" alt="Ad 5 Banner">
+        <img src="https://i.postimg.cc/CxTYLHBf/Orange-and-Green-Colorful-Happy-Diwali-Sale-Instagram-Post.png" alt="Ad 5 Banner">
     </div>
 </div>
                     <div class="swiper-pagination"></div>
