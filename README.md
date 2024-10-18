@@ -2952,41 +2952,41 @@ function createSocialLinks(data) {
         cardsContainer.insertAdjacentHTML('beforeend', cardHTML);
     }
 
-    function createAdCarousel() {
-        return `
-            <div class="ad-carousel-container">
-                <div class="swiper-container ad-swiper">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide"><div class="ad-container">Ad 1</div></div>
-                        <div class="swiper-slide"><div class="ad-container">Ad 2</div></div>
-                        <div class="swiper-slide"><div class="ad-container">Ad 3</div></div>
-                        <div class="swiper-slide"><div class="ad-container">Ad 4</div></div>
-                        <div class="swiper-slide"><div class="ad-container">Ad 5</div></div>
-                    </div>
+function createAdCarousel() {
+    return `
+        <div class="ad-carousel-container">
+            <div class="swiper-container ad-swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide"><div class="ad-container">Ad 1</div></div>
+                    <div class="swiper-slide"><div class="ad-container">Ad 2</div></div>
+                    <div class="swiper-slide"><div class="ad-container">Ad 3</div></div>
+                    <div class="swiper-slide"><div class="ad-container">Ad 4</div></div>
+                    <div class="swiper-slide"><div class="ad-container">Ad 5</div></div>
                 </div>
+                <!-- Add pagination -->
+                <div class="swiper-pagination"></div>
             </div>
-        `;
-    }
+        </div>
+    `;
+}
 
-    function initializeAdCarousel() {
-        new Swiper('.ad-swiper', {
-            slidesPerView: 1,
-            spaceBetween: 30,
-            loop: true,
-            pagination: {
-                el: '.swiper-pagination',
-                clickable: true,
-            },
-            navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
-            },
-            autoplay: {
-                delay: 5000,
-                disableOnInteraction: false,
-            },
-        });
-    }
+function initializeAdCarousel() {
+    new Swiper('.ad-swiper', {
+        slidesPerView: 1,
+        spaceBetween: 30,
+        loop: true,
+        autoplay: {
+            delay: 3000, // Changed from 5000 to 3000 for 3-second intervals
+            disableOnInteraction: false,
+        },
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+        effect: 'slide', // Ensures a sliding effect
+        speed: 800, // Adjust the transition speed (in milliseconds) for smoother sliding
+    });
+}
 
     function initializeTradingViewWidget(cardData) {
         if (cardData.type === 'crypto') {
