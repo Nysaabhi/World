@@ -2963,31 +2963,26 @@ function createSocialLinks(data) {
 <div class="swiper-slide">
     <div class="ad-container">
         <img src="https://agentestudio.com/uploads/post/image/187/main_Article_Covers_NFT.png" alt="Ad 1 Banner">
-        <div class="ad-text">Ad 1</div>
     </div>
 </div>
 <div class="swiper-slide">
     <div class="ad-container">
         <img src="https://thumbor.forbes.com/thumbor/fit-in/x/https://www.forbes.com/advisor/in/wp-content/uploads/2022/03/monkey-g412399084_1280.jpg" alt="Ad 2 Banner">
-        <div class="ad-text">Ad 2</div>
     </div>
 </div>
 <div class="swiper-slide">
     <div class="ad-container">
         <img src="/api/placeholder/800/300" alt="Ad 3 Banner">
-        <div class="ad-text">Ad 3</div>
     </div>
 </div>
 <div class="swiper-slide">
     <div class="ad-container">
         <img src="/api/placeholder/800/300" alt="Ad 4 Banner">
-        <div class="ad-text">Ad 4</div>
     </div>
 </div>
 <div class="swiper-slide">
     <div class="ad-container">
         <img src="/api/placeholder/800/300" alt="Ad 5 Banner">
-        <div class="ad-text">Ad 5</div>
     </div>
 </div>
                     <div class="swiper-pagination"></div>
