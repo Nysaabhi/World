@@ -888,39 +888,37 @@ body {
 
 .ad-carousel-container {
     width: 100%;
-    max-width: 1200px; /* Set a maximum width */
-    margin: 20px auto; /* Center the container and add vertical margin */
-    padding: 0 15px; /* Add some horizontal padding */
+    max-width: 100%; /* Remove max-width limitation */
+    margin: 20px 0; /* Remove horizontal margin */
+    padding: 0; /* Remove padding */
     overflow: hidden; /* Hide overflowing content */
     position: relative; /* For absolute positioning of navigation buttons if needed */
 }
 
 .ad-container {
     height: 200px;
-    display: flex;
+    display: inline-flex; /* Change to inline-flex */
     justify-content: center;
     align-items: center;
     background-color: #f0f0f0;
     border: 1px solid #ddd;
     border-radius: 10px;
     font-size: 24px;
+    width: 100%; /* Full width */
+    margin-right: -4px; /* Remove gap between inline elements */
 }
 
 .ad-container img {
     border-radius: 10px;
+    max-width: 100%; /* Ensure image doesn't overflow */
+    height: auto; /* Maintain aspect ratio */
 }
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
-    .ad-carousel-container {
-        padding: 0 5px; /* Reduce padding to allow for wider content */
-    }
-    
     .ad-container {
         height: 150px; /* Reduce height for smaller screens */
         font-size: 18px; /* Reduce font size for smaller screens */
-        width: 95%; /* Increase width to 95% of the container for mobile devices */
-        margin: 0 auto; /* Center the wider ad container */
     }
 }
 </style>
