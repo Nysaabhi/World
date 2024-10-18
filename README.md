@@ -909,11 +909,10 @@ body {
 }
 
 .swiper-slide {
-    display: none; /* Hide all slides by default */
-}
-
-.swiper-slide:first-child {
-    display: block; /* Show the first slide */
+    width: 100%;
+    height: 100%;
+    opacity: 1;
+    transition: opacity 0.5s ease;
 }
 </style>
 </head>
@@ -2976,26 +2975,23 @@ function createSocialLinks(data) {
                 slidesPerView: 1,
                 spaceBetween: 0,
                 loop: true,
-                allowTouchMove: false,
-                speed: 0, // Instant transition
-                autoplay: false, // We'll control this manually
+                speed: 1000, // Transition speed in milliseconds
+                autoplay: {
+                    delay: 3000, // Wait for 3 seconds before starting the transition
+                    disableOnInteraction: false,
+                },
+                effect: 'slide', // Use slide effect for smooth transition
             });
 
-            let currentIndex = 0;
-            const slides = swiper.slides;
-            const totalSlides = slides.length;
+            // Pause autoplay when mouse enters the carousel
+            swiperElement.addEventListener('mouseenter', () => {
+                swiper.autoplay.stop();
+            });
 
-            function showNextAd() {
-                slides[currentIndex].style.display = 'none';
-                currentIndex = (currentIndex + 1) % totalSlides;
-                slides[currentIndex].style.display = 'block';
-            }
-
-            // Show the first ad
-            slides[currentIndex].style.display = 'block';
-
-            // Set up the interval to change ads every 3 seconds
-            setInterval(showNextAd, 3000);
+            // Resume autoplay when mouse leaves the carousel
+            swiperElement.addEventListener('mouseleave', () => {
+                swiper.autoplay.start();
+            });
         });
     }
 
