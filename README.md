@@ -888,37 +888,89 @@ body {
 
 .ad-carousel-container {
     width: 100%;
-    max-width: 100%; /* Remove max-width limitation */
-    margin: 20px 0; /* Remove horizontal margin */
-    padding: 0; /* Remove padding */
-    overflow: hidden; /* Hide overflowing content */
-    position: relative; /* For absolute positioning of navigation buttons if needed */
+    max-width: 100%;
+    margin: 40px 0; /* Increased margin for better spacing */
+    padding: 0;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    background: linear-gradient(to right, #f8f8f8, #ffffff); /* Subtle gradient background */
 }
 
 .ad-container {
-    height: 200px;
-    display: inline-flex; /* Change to inline-flex */
+    height: 250px; /* Increased height for more prominence */
+    display: inline-flex;
     justify-content: center;
     align-items: center;
-    background-color: #f0f0f0;
-    border: 1px solid #ddd;
-    border-radius: 10px;
+    background-color: #ffffff; /* Clean white background */
+    border: none; /* Removed border for a cleaner look */
+    border-radius: 15px; /* Increased border radius */
     font-size: 24px;
-    width: 100%; /* Full width */
-    margin-right: -4px; /* Remove gap between inline elements */
+    width: 100%;
+    margin: 0;
+    padding: 20px;
+    box-sizing: border-box;
+    transition: all 0.3s ease; /* Smooth transition for hover effects */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* Subtle shadow for each ad */
+}
+
+.ad-container:hover {
+    transform: translateY(-5px); /* Slight lift effect on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Enhanced shadow on hover */
 }
 
 .ad-container img {
-    border-radius: 10px;
-    max-width: 100%; /* Ensure image doesn't overflow */
-    height: auto; /* Maintain aspect ratio */
+    border-radius: 12px;
+    max-width: 100%;
+    height: auto;
+    object-fit: cover; /* Ensures image covers area without distortion */
+    transition: transform 0.3s ease;
 }
+
+.ad-container:hover img {
+    transform: scale(1.05); /* Slight zoom effect on hover */
+}
+
+/* Navigation buttons (if needed) */
+.ad-nav-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.7);
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+    color: #333;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.ad-nav-button:hover {
+    background-color: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.ad-nav-button.prev { left: 10px; }
+.ad-nav-button.next { right: 10px; }
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
+    .ad-carousel-container {
+        margin: 20px 0; /* Reduced margin for mobile */
+    }
+
     .ad-container {
-        height: 150px; /* Reduce height for smaller screens */
-        font-size: 18px; /* Reduce font size for smaller screens */
+        height: 200px; /* Adjusted height for mobile */
+        font-size: 18px;
+        padding: 15px;
+    }
+
+    .ad-nav-button {
+        width: 30px;
+        height: 30px;
+        font-size: 16px;
     }
 }
 </style>
