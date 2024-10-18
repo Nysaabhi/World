@@ -897,6 +897,7 @@ body {
 
 .ad-container {
     height: 200px;
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -917,7 +918,7 @@ body {
     }
 
     .ad-container {
-        height: 150px; /* Reduce height for smaller screens */
+        height: 180px; /* Reduce height for smaller screens */
         font-size: 18px; /* Reduce font size for smaller screens */
     }
 }
