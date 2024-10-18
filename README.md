@@ -552,7 +552,7 @@ body {
 }
 
 .contract-code-container {
-    height: 285px;
+    height: 250px;
     background-color: #f8f8f8;
     border-radius: 8px;
     padding: 10px;
@@ -2969,29 +2969,22 @@ function createSocialLinks(data) {
     }
 
     function initializeAdCarousel() {
-        const adSwipers = document.querySelectorAll('.ad-swiper');
-        adSwipers.forEach((swiperElement, index) => {
-            const swiper = new Swiper(swiperElement, {
-                slidesPerView: 1,
-                spaceBetween: 0,
-                loop: true,
-                speed: 1000, // Transition speed in milliseconds
-                autoplay: {
-                    delay: 3000, // Wait for 3 seconds before starting the transition
-                    disableOnInteraction: false,
-                },
-                effect: 'slide', // Use slide effect for smooth transition
-            });
-
-            // Pause autoplay when mouse enters the carousel
-            swiperElement.addEventListener('mouseenter', () => {
-                swiper.autoplay.stop();
-            });
-
-            // Resume autoplay when mouse leaves the carousel
-            swiperElement.addEventListener('mouseleave', () => {
-                swiper.autoplay.start();
-            });
+        new Swiper('.ad-swiper', {
+            slidesPerView: 1,
+            spaceBetween: 30,
+            loop: true,
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            autoplay: {
+                delay: 5000,
+                disableOnInteraction: false,
+            },
         });
     }
 
