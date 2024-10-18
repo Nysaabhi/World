@@ -2985,9 +2985,10 @@ function createSocialLinks(data) {
                     prevEl: swiperElement.querySelector('.swiper-button-prev'),
                 },
                 autoplay: {
-                    delay: 5000,
+                    delay: 3000, // Changed to 3000ms (3 seconds)
                     disableOnInteraction: false,
                 },
+                speed: 800, // Transition speed in milliseconds
                 touchEventsTarget: 'container',
                 preventClicks: false,
                 preventClicksPropagation: false,
