@@ -887,7 +887,7 @@ body {
 }
 
 .ad-carousel-container {
-    width: 100%;
+    width: ; max-width: 1200px;
     margin: 20px 0;
 }
 
