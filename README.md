@@ -901,7 +901,6 @@ body {
     border: 1px solid #ddd;
     font-size: 24px;
     user-select: none;
-    transition: opacity 0.3s ease; /* Smooth opacity transition */
 }
 
 .ad-swiper {
@@ -910,24 +909,11 @@ body {
 }
 
 .swiper-slide {
-    width: 100%;
-    height: 100%;
-    opacity: 0.7; /* Slightly dim non-active slides */
-    transition: opacity 0.3s ease;
+    display: none; /* Hide all slides by default */
 }
 
-.swiper-slide-active {
-    opacity: 1; /* Full opacity for the active slide */
-}
-
-.swiper-pagination-bullet {
-    background-color: #888;
-    opacity: 0.5;
-}
-
-.swiper-pagination-bullet-active {
-    background-color: #333;
-    opacity: 1;
+.swiper-slide:first-child {
+    display: block; /* Show the first slide */
 }
 </style>
 </head>
@@ -2978,9 +2964,6 @@ function createSocialLinks(data) {
                         <div class="swiper-slide"><div class="ad-container">Ad 4</div></div>
                         <div class="swiper-slide"><div class="ad-container">Ad 5</div></div>
                     </div>
-                    <div class="swiper-pagination"></div>
-                    <div class="swiper-button-next"></div>
-                    <div class="swiper-button-prev"></div>
                 </div>
             </div>
         `;
@@ -2989,29 +2972,30 @@ function createSocialLinks(data) {
     function initializeAdCarousel() {
         const adSwipers = document.querySelectorAll('.ad-swiper');
         adSwipers.forEach((swiperElement, index) => {
-            new Swiper(swiperElement, {
+            const swiper = new Swiper(swiperElement, {
                 slidesPerView: 1,
-                spaceBetween: 30,
+                spaceBetween: 0,
                 loop: true,
-                pagination: {
-                    el: swiperElement.querySelector('.swiper-pagination'),
-                    clickable: true,
-                },
-                navigation: {
-                    nextEl: swiperElement.querySelector('.swiper-button-next'),
-                    prevEl: swiperElement.querySelector('.swiper-button-prev'),
-                },
-                autoplay: {
-                    delay: 3000, // Changed to 3000ms (3 seconds)
-                    disableOnInteraction: false,
-                },
-                speed: 800, // Transition speed in milliseconds
-                touchEventsTarget: 'container',
-                preventClicks: false,
-                preventClicksPropagation: false,
-                simulateTouch: true,
-                touchStartPreventDefault: false,
+                allowTouchMove: false,
+                speed: 0, // Instant transition
+                autoplay: false, // We'll control this manually
             });
+
+            let currentIndex = 0;
+            const slides = swiper.slides;
+            const totalSlides = slides.length;
+
+            function showNextAd() {
+                slides[currentIndex].style.display = 'none';
+                currentIndex = (currentIndex + 1) % totalSlides;
+                slides[currentIndex].style.display = 'block';
+            }
+
+            // Show the first ad
+            slides[currentIndex].style.display = 'block';
+
+            // Set up the interval to change ads every 3 seconds
+            setInterval(showNextAd, 3000);
         });
     }
 
