@@ -888,8 +888,11 @@ body {
 
 .ad-carousel-container {
     width: 100%;
-    margin: 20px 0;
-    overflow: hidden;
+    max-width: 1200px; /* Set a maximum width */
+    margin: 20px auto; /* Center the container and add vertical margin */
+    padding: 0 15px; /* Add some horizontal padding */
+    overflow: hidden; /* Hide overflowing content */
+    position: relative; /* For absolute positioning of navigation buttons if needed */
 }
 
 .ad-container {
@@ -899,22 +902,22 @@ body {
     align-items: center;
     background-color: #f0f0f0;
     border: 1px solid #ddd;
+    border-radius: 10px;
     font-size: 24px;
-    user-select: none;
 }
 
-.ad-swiper {
-    width: 100%;
-    height: 100%;
-}
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .ad-carousel-container {
+        padding: 0 10px;
+    }
 
-.swiper-slide {
-    width: 100%;
-    height: 100%;
-    opacity: 1;
-    transition: opacity 0.5s ease;
+    .ad-container {
+        height: 150px; /* Reduce height for smaller screens */
+        font-size: 18px; /* Reduce font size for smaller screens */
+    }
 }
-</style>
+    </style>
 </head>
 <body>
     <main class="container">
@@ -2952,41 +2955,64 @@ function createSocialLinks(data) {
         cardsContainer.insertAdjacentHTML('beforeend', cardHTML);
     }
 
-function createAdCarousel() {
-    return `
-        <div class="ad-carousel-container">
-            <div class="swiper-container ad-swiper">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide"><div class="ad-container">Ad 1</div></div>
-                    <div class="swiper-slide"><div class="ad-container">Ad 2</div></div>
-                    <div class="swiper-slide"><div class="ad-container">Ad 3</div></div>
-                    <div class="swiper-slide"><div class="ad-container">Ad 4</div></div>
-                    <div class="swiper-slide"><div class="ad-container">Ad 5</div></div>
+    function createAdCarousel() {
+        return `
+            <div class="ad-carousel-container">
+                <div class="swiper-container ad-swiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide"><div class="ad-container">Ad 1</div></div>
+                        <div class="swiper-slide"><div class="ad-container">Ad 2</div></div>
+                        <div class="swiper-slide"><div class="ad-container">Ad 3</div></div>
+                        <div class="swiper-slide"><div class="ad-container">Ad 4</div></div>
+                        <div class="swiper-slide"><div class="ad-container">Ad 5</div></div>
+                    </div>
+                    <div class="swiper-pagination"></div>
                 </div>
-                <!-- Add pagination -->
-                <div class="swiper-pagination"></div>
             </div>
-        </div>
-    `;
-}
+        `;
+    }
 
-function initializeAdCarousel() {
-    new Swiper('.ad-swiper', {
-        slidesPerView: 1,
-        spaceBetween: 30,
-        loop: true,
-        autoplay: {
-            delay: 3000, // Changed from 5000 to 3000 for 3-second intervals
-            disableOnInteraction: false,
-        },
-        pagination: {
-            el: '.swiper-pagination',
-            clickable: true,
-        },
-        effect: 'slide', // Ensures a sliding effect
-        speed: 800, // Adjust the transition speed (in milliseconds) for smoother sliding
-    });
-}
+    function initializeAdCarousel() {
+        new Swiper('.ad-swiper', {
+            slidesPerView: 1,
+            spaceBetween: 30,
+            loop: true,
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            autoplay: {
+                delay: 5000,
+                disableOnInteraction: false,
+            },
+        });
+    }
+
+    function initializeTradingViewWidget(cardData) {
+        if (cardData.type === 'crypto') {
+            const container = document.getElementById(`${cardData.elementId}-tv-chart-container`);
+            if (container) {
+                new TradingView.widget({
+                    "width": "100%",
+                    "height": 300,
+                    "symbol": cardData.tradingViewSymbol,
+                    "interval": "D",
+                    "timezone": "Etc/UTC",
+                    "theme": "light",
+                    "style": "1",
+                    "locale": "en",
+                    "toolbar_bg": "#f1f3f6",
+                    "enable_publishing": false,
+                    "allow_symbol_change": true,
+                    "container_id": `${cardData.elementId}-tv-chart-container`
+                });
+            }
+        }
+    }
 
     function initializeTradingViewWidget(cardData) {
         if (cardData.type === 'crypto') {
@@ -3034,6 +3060,7 @@ function initializeAdCarousel() {
             // Add ad carousel after every 5 cards
             if ((index + 1) % AD_INTERVAL === 0 && index < cardsToRender.length - 1) {
                 cardsContainer.insertAdjacentHTML('beforeend', createAdCarousel());
+                initializeAdCarousel();
             }
 
             // Initialize Swiper for detail boxes
