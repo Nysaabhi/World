@@ -889,7 +889,7 @@ body {
 .ad-carousel-container {
     width: 100%;
     max-width: 100%;
-    margin: 5px 0; /* Increased margin for better spacing */
+    margin: 0px; /* Increased margin for better spacing */
     padding: 0;
     overflow: hidden;
     position: relative;
@@ -930,7 +930,7 @@ body {
 /* Responsive adjustments */
 @media (max-width: 768px) {
     .ad-carousel-container {
-        margin: 20px 0; /* Reduced margin for mobile */
+        margin: 0px 0; /* Reduced margin for mobile */
     }
 
     .ad-container {
