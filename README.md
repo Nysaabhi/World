@@ -889,7 +889,7 @@ body {
 .ad-carousel-container {
     width: 100%;
     margin: 20px 0;
-    overflow: hidden; /* Ensure the carousel doesn't affect surrounding elements */
+    overflow: hidden;
 }
 
 .ad-container {
@@ -900,7 +900,8 @@ body {
     background-color: #f0f0f0;
     border: 1px solid #ddd;
     font-size: 24px;
-    user-select: none; /* Prevent text selection during swiping */
+    user-select: none;
+    transition: opacity 0.3s ease; /* Smooth opacity transition */
 }
 
 .ad-swiper {
@@ -911,6 +912,22 @@ body {
 .swiper-slide {
     width: 100%;
     height: 100%;
+    opacity: 0.7; /* Slightly dim non-active slides */
+    transition: opacity 0.3s ease;
+}
+
+.swiper-slide-active {
+    opacity: 1; /* Full opacity for the active slide */
+}
+
+.swiper-pagination-bullet {
+    background-color: #888;
+    opacity: 0.5;
+}
+
+.swiper-pagination-bullet-active {
+    background-color: #333;
+    opacity: 1;
 }
 </style>
 </head>
