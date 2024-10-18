@@ -2949,9 +2949,6 @@ function createSocialLinks(data) {
                         <div class="swiper-slide"><div class="ad-container">Ad 4</div></div>
                         <div class="swiper-slide"><div class="ad-container">Ad 5</div></div>
                     </div>
-                    <div class="swiper-pagination"></div>
-                    <div class="swiper-button-next"></div>
-                    <div class="swiper-button-prev"></div>
                 </div>
             </div>
         `;
