@@ -889,7 +889,7 @@ body {
 .ad-carousel-container {
     width: 100%;
     max-width: 100%;
-    margin: 40px 0; /* Increased margin for better spacing */
+    margin: 5px 0; /* Increased margin for better spacing */
     padding: 0;
     overflow: hidden;
     position: relative;
@@ -917,7 +917,6 @@ body {
 
 .ad-container img {
     border-radius: 12px;
-    border-color: 000;
     max-width: 100%;
     height: auto;
     object-fit: cover; /* Ensures image covers area without distortion */
