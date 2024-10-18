@@ -893,8 +893,6 @@ body {
     padding: 0;
     overflow: hidden;
     position: relative;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-    background: linear-gradient(to right, #f8f8f8, #ffffff); /* Subtle gradient background */
 }
 
 .ad-container {
@@ -911,16 +909,15 @@ body {
     padding: 20px;
     box-sizing: border-box;
     transition: all 0.3s ease; /* Smooth transition for hover effects */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* Subtle shadow for each ad */
 }
 
 .ad-container:hover {
     transform: translateY(-5px); /* Slight lift effect on hover */
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Enhanced shadow on hover */
 }
 
 .ad-container img {
     border-radius: 12px;
+    border: 000;
     max-width: 100%;
     height: auto;
     object-fit: cover; /* Ensures image covers area without distortion */
@@ -930,30 +927,6 @@ body {
 .ad-container:hover img {
     transform: scale(1.05); /* Slight zoom effect on hover */
 }
-
-/* Navigation buttons (if needed) */
-.ad-nav-button {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: rgba(255, 255, 255, 0.7);
-    border: none;
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    font-size: 20px;
-    color: #333;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.ad-nav-button:hover {
-    background-color: rgba(255, 255, 255, 0.9);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-}
-
-.ad-nav-button.prev { left: 10px; }
-.ad-nav-button.next { right: 10px; }
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
@@ -965,12 +938,6 @@ body {
         height: 200px; /* Adjusted height for mobile */
         font-size: 18px;
         padding: 15px;
-    }
-
-    .ad-nav-button {
-        width: 30px;
-        height: 30px;
-        font-size: 16px;
     }
 }
 </style>
