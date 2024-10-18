@@ -917,7 +917,7 @@ body {
 
 .ad-container img {
     border-radius: 12px;
-    border: 000;
+    border-color: 000;
     max-width: 100%;
     height: auto;
     object-fit: cover; /* Ensures image covers area without distortion */
