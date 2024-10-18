@@ -897,7 +897,6 @@ body {
 
 .ad-container {
     height: 200px;
-    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -914,15 +913,17 @@ body {
 /* Responsive adjustments */
 @media (max-width: 768px) {
     .ad-carousel-container {
-        padding: 0 10px;
+        padding: 0 5px; /* Reduce padding to allow for wider content */
     }
-
+    
     .ad-container {
-        height: 180px; /* Reduce height for smaller screens */
+        height: 150px; /* Reduce height for smaller screens */
         font-size: 18px; /* Reduce font size for smaller screens */
+        width: 95%; /* Increase width to 95% of the container for mobile devices */
+        margin: 0 auto; /* Center the wider ad container */
     }
 }
-    </style>
+</style>
 </head>
 <body>
     <main class="container">
@@ -2987,7 +2988,7 @@ function createSocialLinks(data) {
 </div>
 <div class="swiper-slide">
     <div class="ad-container">
-        <img src="https://i.postimg.cc/CxTYLHBf/Orange-and-Green-Colorful-Happy-Diwali-Sale-Instagram-Post.png" alt="Ad 5 Banner">
+        <img src="https://i.postimg.cc/XqQ15WxP/Grey-and-Orange-Grocery-Store-Facebook-Ad.png" alt="Ad 5 Banner">
     </div>
 </div>
                     <div class="swiper-pagination"></div>
