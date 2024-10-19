@@ -888,7 +888,7 @@ body {
 
 .ad-carousel-container {
             width: 100%;
-            max-width: 120%;
+            max-width: 100%;
             margin: 0;
             padding: 0 20px;
             overflow: hidden;
@@ -902,7 +902,7 @@ body {
             background-color: #ffffff;
             border: none;
             border-radius: 15px;
-            width: 120%;
+            width: 100%;
             height: 200px; /* Increased height */
             margin: 0 5px; /* Reduced margin */
             padding: 10px;
@@ -912,7 +912,7 @@ body {
 
         .ad-container img {
             border-radius: 12px;
-            max-width: 120%;
+            max-width: 100%;
             height: 100%;
             object-fit: cover;
             transition: transform 0.3s ease;
