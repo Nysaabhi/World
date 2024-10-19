@@ -886,57 +886,86 @@ body {
     }
 }
 
+/* Base styles */
 .ad-carousel-container {
     width: 100%;
     max-width: 100%;
-    margin: 0px; /* Increased margin for better spacing */
+    margin: 0;
     padding: 0;
     overflow: hidden;
     position: relative;
 }
 
 .ad-container {
-    height: 250px; /* Increased height for more prominence */
     display: inline-flex;
     justify-content: center;
     align-items: center;
-    background-color: #ffffff; /* Clean white background */
-    border: none; /* Removed border for a cleaner look */
-    border-radius: 15px; /* Increased border radius */
-    font-size: 24px;
+    background-color: #ffffff;
+    border: none;
+    border-radius: 15px;
     width: 100%;
     margin: 0;
     padding: 20px;
     box-sizing: border-box;
-    transition: all 0.3s ease; /* Smooth transition for hover effects */
+    transition: all 0.3s ease;
 }
 
 .ad-container:hover {
-    transform: translateY(-5px); /* Slight lift effect on hover */
+    transform: translateY(-5px);
 }
 
 .ad-container img {
     border-radius: 12px;
     max-width: 100%;
     height: auto;
-    object-fit: cover; /* Ensures image covers area without distortion */
+    object-fit: cover;
     transition: transform 0.3s ease;
 }
 
 .ad-container:hover img {
-    transform: scale(1.05); /* Slight zoom effect on hover */
+    transform: scale(1.05);
 }
 
-/* Responsive adjustments */
-@media (max-width: 768px) {
-    .ad-carousel-container {
-        margin: 0px 0; /* Reduced margin for mobile */
-    }
-
+/* Large desktop screens */
+@media (min-width: 1200px) {
     .ad-container {
-        height: 200px; /* Adjusted height for mobile */
+        height: 300px;
+        font-size: 28px;
+    }
+}
+
+/* Medium-sized desktop screens */
+@media (min-width: 992px) and (max-width: 1199px) {
+    .ad-container {
+        height: 250px;
+        font-size: 24px;
+    }
+}
+
+/* Tablet screens */
+@media (min-width: 768px) and (max-width: 991px) {
+    .ad-container {
+        height: 220px;
+        font-size: 22px;
+        padding: 18px;
+    }
+}
+
+/* Large mobile screens */
+@media (min-width: 576px) and (max-width: 767px) {
+    .ad-container {
+        height: 200px;
+        font-size: 20px;
+        padding: 16px;
+    }
+}
+
+/* Small mobile screens */
+@media (max-width: 575px) {
+    .ad-container {
+        height: 180px;
         font-size: 18px;
-        padding: 15px;
+        padding: 14px;
     }
 }
 </style>
