@@ -2984,34 +2984,49 @@ function createSocialLinks(data) {
                     <div class="swiper-wrapper">
 <div class="swiper-slide">
     <div class="ad-container">
-        <img src="https://agentestudio.com/uploads/post/image/187/main_Article_Covers_NFT.png" alt="Ad 1 Banner">
-    </div>
-</div>
-<div class="swiper-slide">
-    <div class="ad-container">
-        <img src="https://thumbor.forbes.com/thumbor/fit-in/x/https://www.forbes.com/advisor/in/wp-content/uploads/2022/03/monkey-g412399084_1280.jpg" alt="Ad 2 Banner">
-    </div>
-</div>
-<div class="swiper-slide">
-    <div class="ad-container">
-        <img src="https://i.postimg.cc/C5L74DfM/AD.png" alt="Ad 3 Banner">
-    </div>
-</div>
-<div class="swiper-slide">
-    <div class="ad-container">
-        <img src="https://i.postimg.cc/6q3gYT7K/Black-and-White-Typographic-and-Modern-Phone-Brand-Facebook-Ad.png" alt="Ad 4 Banner">
-    </div>
-</div>
-<div class="swiper-slide">
-    <div class="ad-container">
-        <img src="https://i.postimg.cc/XqQ15WxP/Grey-and-Orange-Grocery-Store-Facebook-Ad.png" alt="Ad 5 Banner">
-    </div>
-</div>
-                    <div class="swiper-pagination"></div>
+                            <a href="https://example1.com" target="_blank">
+                                <img src="https://agentestudio.com/uploads/post/image/187/main_Article_Covers_NFT.png" alt="Ad 1 Banner">
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="ad-container">
+                            <a href="https://example2.com" target="_blank">
+                                <img src="https://thumbor.forbes.com/thumbor/fit-in/x/https://www.forbes.com/advisor/in/wp-content/uploads/2022/03/monkey-g412399084_1280.jpg" alt="Ad 2 Banner">
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="ad-container">
+                            <a href="https://example3.com" target="_blank">
+                                <img src="https://i.postimg.cc/C5L74DfM/AD.png" alt="Ad 3 Banner">
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="ad-container">
+                            <a href="https://example4.com" target="_blank">
+                                <img src="https://i.postimg.cc/6q3gYT7K/Black-and-White-Typographic-and-Modern-Phone-Brand-Facebook-Ad.png" alt="Ad 4 Banner">
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="ad-container">
+                        <a href="https://opensea.io" target="_blank">
+                                <img src="https://i.postimg.cc/XqQ15WxP/Grey-and-Orange-Grocery-Store-Facebook-Ad.png" alt="Ad 5 Banner">
+                            </a>
+                        </div>
+                    </div>
+                    
                 </div>
             </div>
-        `;
-    }
+        </div>
+    `;
+}
 
     function initializeAdCarousel() {
         new Swiper('.ad-swiper', {
