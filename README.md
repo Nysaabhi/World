@@ -890,7 +890,7 @@ body {
             width: 100%;
             max-width: 100%;
             margin: 0;
-            padding: 0 40px;
+            padding: 0 20px;
             overflow: hidden;
             position: relative;
         }
@@ -903,8 +903,9 @@ body {
             border: none;
             border-radius: 15px;
             width: 100%;
-            margin: 0 10px;
-            padding: 20px;
+            height: 200px; /* Increased height */
+            margin: 0 5px; /* Reduced margin */
+            padding: 10px;
             box-sizing: border-box;
             transition: all 0.3s ease;
         }
@@ -912,15 +913,15 @@ body {
         .ad-container img {
             border-radius: 12px;
             max-width: 100%;
-            height: auto;
+            height: 100%;
             object-fit: cover;
             transition: transform 0.3s ease;
         }
 
         /* Responsive styles */
-        @media (max-width: 768px) {
-            .ad-carousel-container {
-                padding: 0 20px;
+        @media (max-width: 1200px) {
+            .ad-container {
+                height: 200px; /* Slightly smaller on mobile */
             }
         }
 </style>
@@ -3009,7 +3010,7 @@ function createSocialLinks(data) {
 
         function initializeAdCarousel() {
             new Swiper('.ad-swiper', {
-                slidesPerView: 1.2,
+                slidesPerView: 1.1,
                 spaceBetween: 0,
                 loop: true,
                 centeredSlides: true,
@@ -3023,13 +3024,13 @@ function createSocialLinks(data) {
                 },
                 breakpoints: {
                     640: {
-                        slidesPerView: 1.5,
+                        slidesPerView: 1.3,
                     },
                     768: {
-                        slidesPerView: 1.8,
+                        slidesPerView: 1.5,
                     },
                     1024: {
-                        slidesPerView: 2.2,
+                        slidesPerView: 1.8,
                     },
                 },
             });
