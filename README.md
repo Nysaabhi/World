@@ -912,7 +912,7 @@ body {
 
         .ad-container img {
             border-radius: 12px;
-            max-width: 200%;
+            max-width: 120%;
             height: 100%;
             object-fit: cover;
             transition: transform 0.3s ease;
