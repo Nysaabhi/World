@@ -887,43 +887,71 @@ body {
 }
 
 .ad-carousel-container {
-            width: 100%;
-            max-width: 100%;
-            margin: 0;
-            padding: 0 20px;
-            overflow: hidden;
-            position: relative;
-        }
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0;
+    overflow: hidden;
+    position: relative;
+}
 
-        .ad-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background-color: #ffffff;
-            border: none;
-            border-radius: 15px;
-            width: 100%;
-            height: 200px; /* Increased height */
-            margin: 0 5px; /* Reduced margin */
-            padding: 10px;
-            box-sizing: border-box;
-            transition: all 0.3s ease;
-        }
+.ad-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f8f9fa;
+    border: 1px solid #e9ecef;
+    border-radius: 8px;
+    width: 100%;
+    height: 250px;
+    margin: 0 10px;
+    padding: 15px;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
 
-        .ad-container img {
-            border-radius: 12px;
-            max-width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.3s ease;
-        }
+.ad-container img {
+    border-radius: 6px;
+    max-width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
 
-        /* Responsive styles */
-        @media (max-width: 1200px) {
-            .ad-container {
-                height: 200px; /* Slightly smaller on mobile */
-            }
-        }
+.ad-container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.ad-container:hover img {
+    transform: scale(1.05);
+}
+
+/* Responsive styles */
+@media (max-width: 1200px) {
+    .ad-carousel-container {
+        padding: 0 15px;
+    }
+    
+    .ad-container {
+        height: 220px;
+    }
+}
+
+@media (max-width: 768px) {
+    .ad-container {
+        height: 180px;
+        margin: 0 5px;
+        padding: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .ad-container {
+        height: 150px;
+    }
+}
 </style>
 </head>
 <body>
