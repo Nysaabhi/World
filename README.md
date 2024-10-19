@@ -3031,7 +3031,7 @@ function createSocialLinks(data) {
     function initializeAdCarousel() {
         new Swiper('.ad-swiper', {
             slidesPerView: 1,
-            spaceBetween: 30,
+            spaceBetween: 5,
             loop: true,
             pagination: {
                 el: '.swiper-pagination',
