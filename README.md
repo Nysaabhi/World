@@ -886,88 +886,43 @@ body {
     }
 }
 
-/* Base styles */
 .ad-carousel-container {
-    width: 100%;
-    max-width: 100%;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    position: relative;
-}
+            width: 100%;
+            max-width: 100%;
+            margin: 0;
+            padding: 0 40px;
+            overflow: hidden;
+            position: relative;
+        }
 
-.ad-container {
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #ffffff;
-    border: none;
-    border-radius: 15px;
-    width: 100%;
-    margin: 0;
-    padding: 20px;
-    box-sizing: border-box;
-    transition: all 0.3s ease;
-}
+        .ad-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #ffffff;
+            border: none;
+            border-radius: 15px;
+            width: 100%;
+            margin: 0 10px;
+            padding: 20px;
+            box-sizing: border-box;
+            transition: all 0.3s ease;
+        }
 
-.ad-container:hover {
-    transform: translateY(-5px);
-}
+        .ad-container img {
+            border-radius: 12px;
+            max-width: 100%;
+            height: auto;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
 
-.ad-container img {
-    border-radius: 12px;
-    max-width: 100%;
-    height: auto;
-    object-fit: cover;
-    transition: transform 0.3s ease;
-}
-
-.ad-container:hover img {
-    transform: scale(1.05);
-}
-
-/* Large desktop screens */
-@media (min-width: 1200px) {
-    .ad-container {
-        height: 300px;
-        font-size: 28px;
-    }
-}
-
-/* Medium-sized desktop screens */
-@media (min-width: 992px) and (max-width: 1199px) {
-    .ad-container {
-        height: 250px;
-        font-size: 24px;
-    }
-}
-
-/* Tablet screens */
-@media (min-width: 768px) and (max-width: 991px) {
-    .ad-container {
-        height: 220px;
-        font-size: 22px;
-        padding: 18px;
-    }
-}
-
-/* Large mobile screens */
-@media (min-width: 576px) and (max-width: 767px) {
-    .ad-container {
-        height: 200px;
-        font-size: 20px;
-        padding: 16px;
-    }
-}
-
-/* Small mobile screens */
-@media (max-width: 575px) {
-    .ad-container {
-        height: 180px;
-        font-size: 18px;
-        padding: 14px;
-    }
-}
+        /* Responsive styles */
+        @media (max-width: 768px) {
+            .ad-carousel-container {
+                padding: 0 20px;
+            }
+        }
 </style>
 </head>
 <body>
@@ -3007,75 +2962,79 @@ function createSocialLinks(data) {
     }
 
     function createAdCarousel() {
-        return `
-            <div class="ad-carousel-container">
-                <div class="swiper-container ad-swiper">
-                    <div class="swiper-wrapper">
-<div class="swiper-slide">
-    <div class="ad-container">
-                            <a href="https://example1.com" target="_blank">
-                                <img src="https://agentestudio.com/uploads/post/image/187/main_Article_Covers_NFT.png" alt="Ad 1 Banner">
-                            </a>
+            return `
+                <div class="ad-carousel-container">
+                    <div class="swiper-container ad-swiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <div class="ad-container">
+                                    <a href="https://example1.com" target="_blank">
+                                        <img src="https://i.postimg.cc/jSyYRcK5/Green-and-Yellow-Simple-Clean-Shoes-Sale-Banner.png" alt="Ad 1 Banner">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="ad-container">
+                                    <a href="https://example2.com" target="_blank">
+                                        <img src="https://i.postimg.cc/zfQ82BkZ/Green-and-Black-Vivid-Bold-Blocks-Electronics-and-Appliances-Banner.png" alt="Ad 2 Banner">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="ad-container">
+                                    <a href="https://example3.com" target="_blank">
+                                        <img src="https://i.postimg.cc/C5L74DfM/AD.png" alt="Ad 3 Banner">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="ad-container">
+                                    <a href="https://example4.com" target="_blank">
+                                        <img src="https://i.postimg.cc/6q3gYT7K/Black-and-White-Typographic-and-Modern-Phone-Brand-Facebook-Ad.png" alt="Ad 4 Banner">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="ad-container">
+                                    <a href="https://opensea.io" target="_blank">
+                                        <img src="https://i.postimg.cc/XqQ15WxP/Grey-and-Orange-Grocery-Store-Facebook-Ad.png" alt="Ad 5 Banner">
+                                    </a>
+                                </div>
+                            </div>
                         </div>
                     </div>
-
-                    <div class="swiper-slide">
-                        <div class="ad-container">
-                            <a href="https://example2.com" target="_blank">
-                                <img src="https://thumbor.forbes.com/thumbor/fit-in/x/https://www.forbes.com/advisor/in/wp-content/uploads/2022/03/monkey-g412399084_1280.jpg" alt="Ad 2 Banner">
-                            </a>
-                        </div>
-                    </div>
-
-                    <div class="swiper-slide">
-                        <div class="ad-container">
-                            <a href="https://example3.com" target="_blank">
-                                <img src="https://i.postimg.cc/C5L74DfM/AD.png" alt="Ad 3 Banner">
-                            </a>
-                        </div>
-                    </div>
-
-                    <div class="swiper-slide">
-                        <div class="ad-container">
-                            <a href="https://example4.com" target="_blank">
-                                <img src="https://i.postimg.cc/6q3gYT7K/Black-and-White-Typographic-and-Modern-Phone-Brand-Facebook-Ad.png" alt="Ad 4 Banner">
-                            </a>
-                        </div>
-                    </div>
-
-                    <div class="swiper-slide">
-                        <div class="ad-container">
-                        <a href="https://opensea.io" target="_blank">
-                                <img src="https://i.postimg.cc/XqQ15WxP/Grey-and-Orange-Grocery-Store-Facebook-Ad.png" alt="Ad 5 Banner">
-                            </a>
-                        </div>
-                    </div>
-                    
                 </div>
-            </div>
-        </div>
-    `;
-}
+            `;
+        }
 
-    function initializeAdCarousel() {
-        new Swiper('.ad-swiper', {
-            slidesPerView: 1,
-            spaceBetween: 5,
-            loop: true,
-            pagination: {
-                el: '.swiper-pagination',
-                clickable: true,
-            },
-            navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
-            },
-            autoplay: {
-                delay: 5000,
-                disableOnInteraction: false,
-            },
-        });
-    }
+        function initializeAdCarousel() {
+            new Swiper('.ad-swiper', {
+                slidesPerView: 1.2,
+                spaceBetween: 0,
+                loop: true,
+                centeredSlides: true,
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+                autoplay: {
+                    delay: 5000,
+                    disableOnInteraction: false,
+                },
+                breakpoints: {
+                    640: {
+                        slidesPerView: 1.5,
+                    },
+                    768: {
+                        slidesPerView: 1.8,
+                    },
+                    1024: {
+                        slidesPerView: 2.2,
+                    },
+                },
+            });
+        }
+
 
     function initializeTradingViewWidget(cardData) {
         if (cardData.type === 'crypto') {
