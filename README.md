@@ -2970,7 +2970,7 @@ function createSocialLinks(data) {
                             <div class="swiper-slide">
                                 <div class="ad-container">
                                     <a href="https://example1.com" target="_blank">
-                                        <img src="https://i.postimg.cc/jSyYRcK5/Green-and-Yellow-Simple-Clean-Shoes-Sale-Banner.png" alt="Ad 1 Banner">
+                                        <img src="https://i.postimg.cc/c19T41qj/Greek-and-Black-Vivid-Bold-Blocks-Electronics-and-Appliances-Banner.png" alt="Ad 1 Banner">
                                     </a>
                                 </div>
                             </div>
